@@ -161,6 +161,8 @@ img {
 .portfolio__track {
   columns: 1;
   column-gap: clamp(16px, 2vw, 28px);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 @media (min-width: 640px) {
@@ -183,10 +185,57 @@ img {
   overflow: hidden;
 }
 
+.portfolio__item-btn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+
 .portfolio__item img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+/* ---------- Lightbox ---------- */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+  background: rgba(0, 0, 0, 0.85);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s;
+}
+
+.lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.25s ease, visibility 0s linear 0s;
+}
+
+.lightbox__img {
+  max-width: 90vw;
+  max-height: 85vh;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  transform: scale(0.85);
+  transition: transform 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.lightbox.is-open .lightbox__img {
+  transform: scale(1);
 }
 
 /* ---------- Footer ---------- */

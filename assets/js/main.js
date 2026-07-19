@@ -22,3 +22,30 @@ if (copyBtn) {
     }
   });
 }
+
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = lightbox.querySelector(".lightbox__img");
+
+function openLightbox(img) {
+  lightboxImg.src = img.src;
+  lightboxImg.alt = img.alt;
+  lightbox.classList.add("is-open");
+  document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+  lightbox.classList.remove("is-open");
+  document.body.style.overflow = "";
+}
+
+document.querySelectorAll(".portfolio__item-btn").forEach((btn) => {
+  btn.addEventListener("click", () => openLightbox(btn.querySelector("img")));
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) closeLightbox();
+});
+
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape") closeLightbox();
+});

@@ -64,7 +64,7 @@ img {
 
 .hero__inner {
   max-width: 760px;
-  margin: 0;
+  margin: 0 auto;
   text-align: left;
   display: flex;
   align-items: flex-start;
@@ -155,34 +155,32 @@ img {
 
 /* ---------- Portfolio ---------- */
 .portfolio {
-  padding: 0 0 clamp(80px, 14vh, 140px);
+  padding: 0 var(--gutter) clamp(80px, 14vh, 140px);
 }
 
 .portfolio__track {
-  display: flex;
-  gap: clamp(16px, 2vw, 28px);
-  overflow-x: auto;
-  padding: 0 var(--gutter) 12px;
-  scroll-snap-type: x proximity;
-  -webkit-overflow-scrolling: touch;
-  scrollbar-width: thin;
+  columns: 1;
+  column-gap: clamp(16px, 2vw, 28px);
+}
+
+@media (min-width: 640px) {
+  .portfolio__track {
+    columns: 2;
+  }
 }
 
 .portfolio__item {
-  flex: 0 0 auto;
-  width: min(72vw, 480px);
-  margin: 0;
-  scroll-snap-align: start;
+  margin: 0 0 clamp(16px, 2vw, 28px);
+  break-inside: avoid;
   background: var(--color-line);
   border-radius: 6px;
   overflow: hidden;
-  aspect-ratio: 4 / 3;
 }
 
 .portfolio__item img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
 }
 
 /* ---------- Footer ---------- */

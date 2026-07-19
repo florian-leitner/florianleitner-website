@@ -1,0 +1,32 @@
+.legal {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 60px var(--gutter) 100px;
+}
+
+.legal__back {
+  display: inline-block;
+  margin-bottom: 40px;
+  color: var(--color-muted);
+  font-size: 0.9375rem;
+}
+
+.legal__back:hover {
+  color: var(--color-text);
+}
+
+.legal h1 {
+  font-size: 2rem;
+  letter-spacing: -0.01em;
+  margin-bottom: 24px;
+}
+
+.legal h2 {
+  font-size: 1.125rem;
+  margin-top: 36px;
+  margin-bottom: 8px;
+}
+
+.legal p {
+  color: var(--color-muted);
+}

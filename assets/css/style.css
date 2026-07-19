@@ -169,6 +169,12 @@ img {
   }
 }
 
+@media (min-width: 1024px) {
+  .portfolio__track {
+    columns: 3;
+  }
+}
+
 .portfolio__item {
   margin: 0 0 clamp(16px, 2vw, 28px);
   break-inside: avoid;

@@ -11,7 +11,7 @@ html {
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
   color: var(--color-text);
   background: var(--color-bg);
   line-height: 1.5;
@@ -41,72 +41,59 @@ img {
 
 /* ---------- Top banner ---------- */
 .top-banner {
-  background: var(--color-accent);
-  color: #fdfcfa;
-  text-align: center;
-  padding: 10px var(--gutter);
+  background: #ececea;
+  color: var(--color-text);
+  text-align: right;
+  padding: 20px var(--gutter);
 }
 
 .top-banner__link {
   font-size: 0.8125rem;
-  letter-spacing: 0.02em;
-  border-bottom: 1px solid transparent;
-  transition: border-color 0.2s ease;
+  letter-spacing: 0.01em;
+  border-bottom: 1px solid var(--color-text);
 }
 
 .top-banner__link:hover {
-  border-bottom-color: currentColor;
+  opacity: 0.7;
 }
 
 /* ---------- Hero ---------- */
 .hero {
-  padding: clamp(80px, 16vh, 160px) var(--gutter) clamp(60px, 12vh, 120px);
+  padding: clamp(56px, 12vh, 120px) var(--gutter) clamp(60px, 12vh, 120px);
 }
 
 .hero__inner {
-  max-width: 720px;
-  margin: 0 auto;
-  text-align: center;
+  max-width: 560px;
+  margin: 0;
+  text-align: left;
+}
+
+.hero__image {
+  width: clamp(96px, 14vw, 150px);
+  height: clamp(96px, 14vw, 150px);
+  object-fit: cover;
+  border-radius: 22%;
+  margin-bottom: 28px;
 }
 
 .hero__name {
-  font-size: clamp(2.5rem, 6vw, 4.25rem);
+  font-size: clamp(2rem, 4.5vw, 2.75rem);
   font-weight: 600;
   letter-spacing: -0.02em;
-  margin: 0 0 28px;
-}
-
-.hero__cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  padding: 10px 22px;
-  border: 1px solid var(--color-text);
-  border-radius: 999px;
-  margin-bottom: 40px;
-  transition: background 0.2s ease, color 0.2s ease;
-}
-
-.hero__cta:hover {
-  background: var(--color-text);
-  color: var(--color-bg);
-}
-
-.hero__cta-arrow {
-  transition: transform 0.2s ease;
-}
-
-.hero__cta:hover .hero__cta-arrow {
-  transform: translateX(3px);
+  margin: 0 0 20px;
 }
 
 .hero__subheading {
-  font-size: clamp(1.0625rem, 2.2vw, 1.25rem);
+  font-size: clamp(1rem, 1.6vw, 1.125rem);
   color: var(--color-muted);
-  max-width: 560px;
-  margin: 0 auto 32px;
+  max-width: 480px;
+  margin: 0 0 24px;
+}
+
+.hero__email-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .hero__email {
@@ -119,6 +106,34 @@ img {
 
 .hero__email:hover {
   border-color: var(--color-text);
+}
+
+.hero__copy-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
+  background: var(--color-text);
+  color: var(--color-bg);
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.hero__copy-btn:hover {
+  opacity: 0.8;
+}
+
+.hero__copy-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.hero__copy-btn.is-copied {
+  background: #3a7d54;
 }
 
 /* ---------- Portfolio ---------- */
